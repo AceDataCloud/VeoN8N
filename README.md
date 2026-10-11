@@ -2,7 +2,7 @@
 
 Generate one Veo video, then query the same task until it finishes. This community package connects only the Veo Video service through Ace Data Cloud. The screenshots below show an actual self-hosted n8n 2.42.3 instance in English. n8n Creator Portal verification is pending.
 
-**Package:** `@acedatacloud/n8n-nodes-veo-video` · [Veo Video API and pricing](https://platform.acedata.cloud/documents/veo-videos) · [Source](https://github.com/AceDataCloud/VeoN8N)
+**Package:** `@acedatacloud/n8n-nodes-veo-video` · [Veo Video API and pricing](https://platform.acedata.cloud/documents/veo-videos?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veon8n_readme_documents_veo_videos) · [Source](https://github.com/AceDataCloud/VeoN8N)
 
 ## Quick start
 
@@ -14,7 +14,9 @@ In self-hosted n8n, sign in as an owner or admin. Open **Settings → Community 
 
 ### 2. Get an API key with Veo access
 
-1. Sign in at [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications).
+New account? Register and sign in first. If the Applications page has no General application yet, choose **Initialize General Application**, then continue with the key steps below.
+
+1. Sign in at [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veon8n_readme_api_key).
 2. Open **General application** and copy its API key, or choose **Manage Keys → Create** for a separate n8n key.
 3. Check Veo access, current pricing and balance. If **Allowed APIs** is enabled, include both `/veo/videos` and `/veo/tasks`.
 
@@ -55,7 +57,7 @@ Check the current Veo 3.1 Fast price and account balance before executing. Keep 
 
 Open **Get Task** output. Continue only when `status=succeeded`, `finished=true` and `successful=true`; then open `videoUrls`. If the task is still processing, **do not rerun the full workflow**: it would create another paid video. Use the [query-only workflow](https://github.com/AceDataCloud/VeoN8N/raw/refs/heads/main/examples/query-existing-task.json) with the original task ID. The [bounded polling workflow](https://github.com/AceDataCloud/VeoN8N/raw/refs/heads/main/examples/generate-and-wait.json) queries that ID for up to 30 minutes without creating another task.
 
-Compare the task's trace ID and execution time with [Ace Data Cloud usage history](https://platform.acedata.cloud/console). Any `cost.amount` is in **Credits**, not USD. Price depends on the current model and your account package. A previous Veo 3.1 Fast video succeeded in Dify and deducted `0.648 Credits` under that test account; it is not a call made by this n8n package. A credentialed n8n result and bill have not yet been verified for this release.
+Compare the task's trace ID and execution time with [Ace Data Cloud usage history](https://platform.acedata.cloud/console?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veon8n_readme_console). Any `cost.amount` is in **Credits**, not USD. Price depends on the current model and your account package. A previous Veo 3.1 Fast video succeeded in Dify and deducted `0.648 Credits` under that test account; it is not a call made by this n8n package. A credentialed n8n result and bill have not yet been verified for this release.
 
 ## Other options and troubleshooting
 
