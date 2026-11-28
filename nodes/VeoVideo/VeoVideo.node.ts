@@ -224,12 +224,12 @@ async function request(context: IExecuteFunctions, endpoint: string, body: IData
 
 export class VeoVideo implements INodeType {
   description: INodeTypeDescription = {
-    displayName: 'Veo Video by Ace Data Cloud', name: 'veoVideo',
+    displayName: 'Veo Video', name: 'veoVideo',
     icon: { light: 'file:icon.svg', dark: 'file:icon.dark.svg' },
     group: ['transform'], version: 1,
     subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
     description: 'Generate a Veo video and retrieve the same task until it finishes',
-    defaults: { name: 'Veo Video by Ace Data Cloud' },
+    defaults: { name: 'Veo Video' },
     inputs: [NodeConnectionTypes.Main], outputs: [NodeConnectionTypes.Main],
     usableAsTool: true, credentials: [{ name: 'aceDataVeoVideoApi', required: true }], properties,
   };
@@ -244,7 +244,7 @@ export class VeoVideo implements INodeType {
           hasToken = typeof credentials.apiToken === 'string' && Boolean(credentials.apiToken.trim());
         } catch { /* n8n did not provide a credential. */ }
         if (!hasToken)
-          throw new NodeOperationError(this.getNode(), 'A Veo Video by Ace Data Cloud credential is required.');
+          throw new NodeOperationError(this.getNode(), 'A Veo Video credential is required.');
 
         const resource = this.getNodeParameter('resource', index) as string;
         const operation = this.getNodeParameter('operation', index) as string;

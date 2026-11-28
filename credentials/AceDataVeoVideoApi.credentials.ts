@@ -2,7 +2,7 @@ import type { IAuthenticateGeneric, ICredentialTestRequest, ICredentialType, INo
 
 export class AceDataVeoVideoApi implements ICredentialType {
   name = 'aceDataVeoVideoApi';
-  displayName = 'Veo Video by Ace Data Cloud API';
+  displayName = 'Veo Video API';
   documentationUrl = 'https://github.com/AceDataCloud/VeoN8N#credentials';
   icon = 'file:../nodes/VeoVideo/icon.svg' as const;
   properties: INodeProperties[] = [{
