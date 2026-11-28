@@ -28,7 +28,7 @@ Copy only the application token. Do not include `Bearer `, quotation marks or a 
 
 ### 3. Save the credential in n8n
 
-Add **Veo Video by Ace Data Cloud** to a workflow. In **Credential**, choose **Connect to Veo Video by Ace Data Cloud** and create a new credential. Paste the token into **API Token**. Set **Allowed HTTP Request Domains** to **Specific Domains → `api.acedata.cloud`** and save. Use the same credential on **Create** and **Get Task**.
+Add **Veo Video** to a workflow. In **Credential**, choose **Connect to Veo Video** and create a new credential. Paste the token into **API Token**. Set **Allowed HTTP Request Domains** to **Specific Domains → `api.acedata.cloud`** and save. Use the same credential on **Create** and **Get Task**.
 
 The credential test calls the free `/openai/models` metadata route. It checks the token, while the first Veo call checks service access.
 
